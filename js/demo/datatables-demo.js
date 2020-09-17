@@ -421,6 +421,14 @@ const players = [
 // Call the dataTables jQuery plugin
 $(document).ready(function() {
 
+    const isMobile = $(window).width() < 600;
+
+    if (isMobile) {
+        $("body").addClass("sidebar-toggled");
+        $(".sidebar").addClass("toggled");
+        $('.sidebar .collapse').collapse('hide');
+    }
+
   $.ajax({
     method: 'GET',
     url: 'https://api.sleeper.app/v1/league/533133678566834176/rosters'
@@ -438,19 +446,21 @@ $(document).ready(function() {
       };
     });
 
-    $('#dataTable').DataTable({
+    const table = $('#dataTable').DataTable({
       data: standingsData,
       columns: [
-        { title: 'Team Name', data: 'name' },
-        { title: 'Wins', data: 'wins' },
-        { title: 'Losses', data: 'losses' },
-        { title: 'Points For', data: 'pointsFor' },
-        { title: 'Points Against', data: 'pointsAgainst' }
+        { title: isMobile ? 'Name' : 'Team Name', data: 'name' },
+        { title: isMobile ? 'W' : 'Wins', data: 'wins' },
+        { title: isMobile ? 'L' : 'Losses', data: 'losses' },
+        { title: isMobile ? 'PF' : 'Points For', data: 'pointsFor' },
+        { title: isMobile ? 'PA' : 'Points Against', data: 'pointsAgainst' }
       ],
+      fixedHeader: true,
       order: [[1, 'desc'], [3, 'desc']],
       paging: false,
       searching: false,
-      info: false
+      info: false,
+      responsive: true
     });
 
     $('#loading-indicator, #standings-table').toggleClass('d-none');
