@@ -1,0 +1,18 @@
+{
+  "name": "threat-level-midnight",
+  "version": "1.0.0",
+  "description": "Threat Level Midnight Stats",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n-devr/threat-level-midnight.git"
+  },
+  "author": "Noah Weinert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n-devr/threat-level-midnight/issues"
+  },
+  "homepage": "https://github.com/n-devr/threat-level-midnight#readme"
+}
