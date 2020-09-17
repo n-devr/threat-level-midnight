@@ -14,5 +14,9 @@
   "bugs": {
     "url": "https://github.com/n-devr/threat-level-midnight/issues"
   },
-  "homepage": "https://github.com/n-devr/threat-level-midnight#readme"
+  "homepage": "https://github.com/n-devr/threat-level-midnight#readme",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
 }
