@@ -9,7 +9,7 @@
   <meta name="description" content="Official league standings for Threat Level Midnight - the only fantasy league that matters.">
   <meta name="author" content="Noah Weinert">
 
-  <title>Threat Level Midnight - League Standings</title>
+  <title>Threat Level Midnight - Documents</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -17,9 +17,6 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -43,8 +40,8 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="#">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-list-ol"></i>
           <span>Standings</span></a>
       </li>
@@ -71,8 +68,8 @@
         </div>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="docs.html">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">
           <i class="fas fa-fw fa-file-alt"></i>
           <span>Documents</span></a>
       </li>
@@ -120,28 +117,54 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Regular Season Standings</h1>
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <!-- <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-            </div> -->
-            <div class="card-body">
-              <div id="standings-table" class="table-responsive d-none">
-                <table class="table" id="dataTable" class="cell-border" width="100%"></table>
-              </div>
-              <div id="loading-indicator">
-                <div class="d-flex flex-column align-items-center justify-content-center py-5">
-                  <div class="spinner-grow" role="status">
-                    <span class="sr-only">Loading...</span>
-                  </div>
-                  <h2 class="pt-3">loading matchup data...</h2>
+            <div class="container-fluid vh-100">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-3 text-gray-800">League Documents</h1>
+                
+                <div class="row">
+      
+                <!-- Sidepot -->
+                <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                    <a href="https://docs.google.com/spreadsheets/d/135SupwYYMYSk_8eIcjCQAHdDU3l92IcnYhHPHYlS9Kw/edit?usp=sharing"
+                        target="_blank">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Google Sheet</div>
+                                        <div class="h5 mb-0 font-weight-bold text-success">Sidepot</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-external-link-alt fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
+
+                <!-- League Rules -->
+                <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                    <a href="https://docs.google.com/document/d/13nk7DP09HNebMIHxouTX_ydR7EWD-xvC39agNCDIMKQ/edit?usp=sharing"
+                        target="_blank">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Google Doc</div>
+                                        <div class="h5 mb-0 font-weight-bold text-primary">League Rules</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-external-link-alt fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+      
               </div>
-             
-            </div>
-          </div>
 
         </div>
         <!-- /.container-fluid -->
@@ -205,11 +228,6 @@
   <!-- Page level custom scripts -->
   <!-- <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script> -->
-
-    <!-- Page level custom scripts -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 
