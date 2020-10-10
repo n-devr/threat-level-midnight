@@ -438,7 +438,7 @@ $(document).ready(function() {
     const standingsData = rosters.map(team => {
       const player = players.find(player => player.user_id === team.owner_id);
       return {
-        name: player.metadata.team_name || player.display_name,
+        name: player.display_name,
         wins: team.settings.wins,
         losses: team.settings.losses,
         pointsFor: Number(`${team.settings.fpts}.${team.settings.fpts_decimal}`),
@@ -446,9 +446,26 @@ $(document).ready(function() {
       };
     });
 
+    let rankedStandingsData = standingsData.sort((rosterA, rosterB) => {
+
+        if (rosterA.wins > rosterB.wins) {
+            return -1;
+        } else if (rosterA.wins < rosterB.wins) {
+            return 1;
+        } else {
+            return rosterA.pointsFor > rosterB.pointsFor ? -1 : 1;
+        }
+    });
+
+    rankedStandingsData = rankedStandingsData.map((standing, index) => {
+        standing.rank = index + 1;
+        return standing;
+    });
+
     const table = $('#dataTable').DataTable({
-      data: standingsData,
+      data: rankedStandingsData,
       columns: [
+        { title: isMobile ? 'Pos.' : 'Position', data: 'rank' },
         { title: isMobile ? 'Name' : 'Team Name', data: 'name' },
         { title: isMobile ? 'W' : 'Wins', data: 'wins' },
         { title: isMobile ? 'L' : 'Losses', data: 'losses' },
@@ -456,7 +473,7 @@ $(document).ready(function() {
         { title: isMobile ? 'PA' : 'Points Against', data: 'pointsAgainst' }
       ],
       fixedHeader: true,
-      order: [[1, 'desc'], [3, 'desc']],
+      order: [[0, 'asc']],
       paging: false,
       searching: false,
       info: false,
