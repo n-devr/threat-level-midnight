@@ -6,10 +6,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Official league standings for Threat Level Midnight - the only fantasy league that matters.">
+  <meta name="description" content="Threat Level Midnight Week 1 Matchups, Stats, and Recaps">
   <meta name="author" content="Noah Weinert">
 
-  <title>Threat Level Midnight - League Standings</title>
+  <title>Threat Level Midnight - Week 3</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -18,12 +18,9 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
 </head>
 
-<body id="page-top">
+<body>
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -32,7 +29,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-football-ball"></i>
         </div>
@@ -43,8 +40,8 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="#">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-list-ol"></i>
           <span>Standings</span></a>
       </li>
@@ -58,7 +55,7 @@
       </div> -->
 
       <!-- Nav Item - Schedule -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSchedule" aria-expanded="true" aria-controls="collapseSchedule">
           <i class="fas fa-fw fa-calendar"></i>
           <span>Schedule</span>
@@ -68,7 +65,7 @@
             <!-- <h6 class="collapse-header">Custom Utilities:</h6> -->
             <a class="collapse-item" href="week-1.html">Week 1</a>
             <a class="collapse-item" href="week-2.html">Week 2</a>
-            <a class="collapse-item" href="week-3.html">Week 3</a>
+            <a class="collapse-item" href="#">Week 3</a>
             <a class="collapse-item" href="week-4.html">Week 4</a>
           </div>
         </div>
@@ -121,32 +118,81 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid">
+        <div class="container-fluid vh-100">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Regular Season Standings</h1>
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <!-- <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-            </div> -->
-            <div class="card-body">
-              <div id="standings-table" class="table-responsive d-none">
-                <table class="table" id="dataTable" class="cell-border" width="100%"></table>
-              </div>
-              <div id="loading-indicator">
-                <div class="d-flex flex-column align-items-center justify-content-center py-5">
-                  <div class="spinner-grow" role="status">
-                    <span class="sr-only">Loading...</span>
+          <h1 id="page-top" class="h3 mb-3 text-gray-800">Week 3</h1>
+          
+          <div class="row">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Points Scored</div>
+                      <div id="league-point-total" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-users fa-2x text-gray-300"></i>
+                    </div>
                   </div>
-                  <h2 class="pt-3">loading matchup data...</h2>
                 </div>
               </div>
-             
             </div>
-          </div>
 
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">League Median</div>
+                      <div id="league-median-score" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-star-half-alt fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Annual) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">High Score (<span id="high-score-team-name"></span>)</div>
+                      <div id="week-high-score" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-crown fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tasks Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-danger shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Low Score (<span id="low-score-team-name"></span>)</div>
+                        <div id="week-low-score" class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-sad-cry fa-2x text-gray-300"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </div>
+        <div id="matchups-container" class="row"></div>
         <!-- /.container-fluid -->
 
       </div>
@@ -208,11 +254,8 @@
   <!-- Page level custom scripts -->
   <!-- <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script> -->
-
-    <!-- Page level custom scripts -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-    <script src="js/demo/datatables-demo.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.11.0/underscore-min.js" integrity="sha512-wBiNJt1JXeA/ra9F8K2jyO4Bnxr0dRPsy7JaMqSlxqTjUGHe1Z+Fm5HMjCWqkIYvp/oCbdJEivZ5pLvAtK0csQ==" crossorigin="anonymous"></script>
+  <script src="js/week-3.js"></script>
 
 </body>
 

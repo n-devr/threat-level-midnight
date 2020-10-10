@@ -447,7 +447,7 @@ $(document).ready(function () {
 
     $.ajax({
         method: 'GET',
-        url: 'https://api.sleeper.app/v1/league/533133678566834176/matchups/1'
+        url: 'https://api.sleeper.app/v1/league/533133678566834176/matchups/3'
       })
       .done(startingRosters => {
 
